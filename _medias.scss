@@ -1,5 +1,5 @@
 
-@media (min-width:576px){
+@media (min-width:576px) and (max-width:767px){
     // CARRITO
     .carrito__items{
         flex-direction: row;
@@ -16,29 +16,33 @@
     .footer{
         flex-direction: row;
     }
-    .footer__envios h3, .footer__pagos h3{
-        display: flex;
-    }
-
-
 }
-@media (min-width:768px){
+@media (min-width:768px) and (max-width:991px){
+    // INDEX
+    #galeria button{
+        width: 25%;
+    }
     // CARRITO
     .carrito__items__nombre, .carrito__items__precio{
         text-align: center;
         padding: 10px;
     }
-    // CATEGORIAS
-    #galeria button{
-        width: 25%;
+    .carrito__items{
+        flex-direction: row;
+        justify-content: space-between;
     }
+    .carrito__titulo{
+        padding: 0 30px;
+        text-align: start;
+    }
+    .carrito__total{
+        text-align: end;
+    } 
     // FOOTER
     .footer{
         flex-direction: row;
     }
-
 }
-
 @media (min-width:992px) {
     // INDEX
     .navbar-expand-lg .navbar-collapse{
@@ -47,7 +51,9 @@
     .cards-columns{
         columns: 3 50px;
     }
-
+    #galeria button{
+        width: 25%;
+    }
     // CATEGORIAS
     aside{
         display: flex;
@@ -62,9 +68,38 @@
     .section__categorias__top{
         display: flex;
         justify-content: end;
-        
+
     }
     .row {
         --bs-gutter-x: 1.5rem;
+    }
+    .nav-link:focus{
+        text-align: start;
+    }
+    .dropdown-menu{
+        text-align: start;
+    }
+    .dropdown-item{
+        padding: .25rem 1rem;
+    }
+    // FOOTER
+    .footer{
+        flex-direction: row;
+    }
+    // CARRITO
+    .carrito__items{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .carrito__titulo{
+        padding: 0 30px;
+        text-align: start;
+    }
+    .carrito__total{
+        text-align: end;
+    } 
+    // FOOTER
+    .footer{
+        flex-direction: row;
     }
 }

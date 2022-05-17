@@ -10,11 +10,6 @@ body {
   background-color: #F2F2F2;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
 a {
   text-decoration: none;
 }
@@ -41,6 +36,11 @@ option {
 
 .p-20 {
   padding: 20px;
+}
+
+.w-h-100, .card__top img, .input input, html, body {
+  width: 100%;
+  height: 100%;
 }
 
 ::-moz-selection {
@@ -72,7 +72,7 @@ option {
 
 /* HEADER */
 #logo {
-  width: 40px;
+  width: 45px;
   border-radius: 50px;
 }
 
@@ -80,13 +80,27 @@ option {
   background-color: #efe5dc;
 }
 
+.navbar-nav {
+  align-items: flex-end;
+  padding-right: 5px;
+}
+
 .navbar-collapse {
   flex-grow: unset;
+}
+
+.nav-link:focus {
+  text-align: end;
 }
 
 .dropdown-menu {
   background-color: #efe5dc;
   border: none;
+  text-align: end;
+}
+
+.dropdown-item {
+  padding: 0.25rem 0;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -107,24 +121,26 @@ option {
 
 /* INDEX */
 .carousel-inner {
-  max-height: 75rem;
+  max-height: 60rem;
 }
 
-.galeria__titulo {
-  padding: 20px 0 10px;
-}
-.galeria__titulo h2 {
-  text-align: center;
+#galeria {
+  margin: 25px auto 10px;
 }
 
 #galeria img {
   padding: 5px;
   border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #galeria button {
   border: none;
   width: 50%;
+  background-color: transparent;
 }
 
 .modal {
@@ -141,9 +157,12 @@ option {
   opacity: 0.7;
 }
 
+button {
+  background-color: transparent;
+}
+
 /* AYUDA */
-.ayuda__titulo {
-  font-size: 28px;
+.ayuda__titulo, .galeria__titulo {
   text-align: center;
   padding: 15px;
 }
@@ -183,9 +202,9 @@ option {
 
 /* CARRITO */
 .container__carrito {
-  width: 80%;
   margin: 60px auto;
   border-radius: 5px;
+  width: 80%;
 }
 
 .carrito__titulo {
@@ -226,15 +245,16 @@ option {
 /* CONTACTO */
 .container__contacto {
   border: 2px solid #0D0D0D;
+  width: 90%;
   margin: 20px auto 10px;
   border-radius: 15px;
-  width: 90%;
 }
 
 .form {
-  align-items: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: unset;
   width: 60%;
   margin: auto;
   gap: 10px;
@@ -291,8 +311,6 @@ option {
   margin-top: 10px;
 }
 .input input {
-  width: 100%;
-  height: 100%;
   outline: none;
   border: none;
   border: 1px solid #0D0D0D;
@@ -356,7 +374,7 @@ aside {
   padding: 0 0 3px 3px;
 }
 .aside__categorias__list li:hover {
-  background-color: #b4e0e8;
+  background-color: #FAFAF0;
   cursor: pointer;
 }
 
@@ -412,15 +430,13 @@ aside {
 }
 
 .card__top {
-  padding: 10px;
   height: 80%;
-  background-color: #FFFFFF;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .card__top img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -448,8 +464,8 @@ footer {
 .footer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: auto;
   padding: 10px 0;
   gap: 10px;
@@ -462,28 +478,48 @@ footer {
   width: 20px;
 }
 
-.footer a, .footer h3 {
+.footer h2 {
   color: rgba(0, 0, 0, 0.7);
-  font-size: 1.5rem;
-}
-
-.footer a:hover {
-  color: #0D0D0D;
+  font-size: calc(1.275rem + 0.5vw);
 }
 
 .footer__contacto__item {
   display: flex;
   align-items: center;
+  flex-direction: row;
 }
 .footer__contacto__item span {
   padding-left: 5px;
 }
 
-.footer__envios h3, .footer__pagos h3 {
-  display: none;
+.footer__contacto i {
+  font-size: 22px;
 }
 
-@media (min-width: 576px) {
+.fa-envelope:hover {
+  color: rgb(190, 48, 48);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-whatsapp:hover {
+  color: green;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-instagram:hover {
+  color: orange;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.copyright {
+  text-align: center;
+  background-color: rgba(13, 13, 13, 0.1215686275);
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
   .carrito__items {
     flex-direction: row;
     justify-content: space-between;
@@ -501,19 +537,29 @@ footer {
   .footer {
     flex-direction: row;
   }
-
-  .footer__envios h3, .footer__pagos h3 {
-    display: flex;
-  }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
+  #galeria button {
+    width: 25%;
+  }
+
   .carrito__items__nombre, .carrito__items__precio {
     text-align: center;
     padding: 10px;
   }
 
-  #galeria button {
-    width: 25%;
+  .carrito__items {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .carrito__titulo {
+    padding: 0 30px;
+    text-align: start;
+  }
+
+  .carrito__total {
+    text-align: end;
   }
 
   .footer {
@@ -528,6 +574,10 @@ footer {
   .cards-columns {
     -moz-columns: 3 50px;
          columns: 3 50px;
+  }
+
+  #galeria button {
+    width: 25%;
   }
 
   aside {
@@ -550,5 +600,39 @@ footer {
 
   .row {
     --bs-gutter-x: 1.5rem;
+  }
+
+  .nav-link:focus {
+    text-align: start;
+  }
+
+  .dropdown-menu {
+    text-align: start;
+  }
+
+  .dropdown-item {
+    padding: 0.25rem 1rem;
+  }
+
+  .footer {
+    flex-direction: row;
+  }
+
+  .carrito__items {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .carrito__titulo {
+    padding: 0 30px;
+    text-align: start;
+  }
+
+  .carrito__total {
+    text-align: end;
+  }
+
+  .footer {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=estilos.css.map */
