@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -72,12 +73,17 @@ option {
 
 /* HEADER */
 #logo {
-  width: 45px;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.75rem;
+  color: #F2F2F2;
+  background-color: #303030;
+  padding: 0 10px;
   border-radius: 50px;
 }
 
 .navbar {
   background-color: #efe5dc;
+  padding: 0.25rem 0;
 }
 
 .navbar-nav {
@@ -104,7 +110,7 @@ option {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #0D0D0D;
+  color: #303030;
 }
 
 .navbar-toggler {
@@ -188,11 +194,11 @@ button {
 .accordion-button:focus {
   border: none;
   box-shadow: none;
-  color: #0D0D0D;
+  color: #303030;
 }
 
 .accordion-button:not(.collapsed) {
-  color: #0D0D0D;
+  color: #303030;
   background-color: transparent;
   box-shadow: none;
 }
@@ -244,7 +250,7 @@ button {
 
 /* CONTACTO */
 .container__contacto {
-  border: 2px solid #0D0D0D;
+  border: 2px solid #303030;
   width: 90%;
   margin: 20px auto 10px;
   border-radius: 15px;
@@ -266,7 +272,7 @@ button {
 .form textarea {
   width: 100%;
   margin: 10px;
-  border: 1px solid #0D0D0D;
+  border: 1px solid #303030;
   resize: none;
   text-indent: 10px;
   padding: 12px 0;
@@ -313,7 +319,7 @@ button {
 .input input {
   outline: none;
   border: none;
-  border: 1px solid #0D0D0D;
+  border: 1px solid #303030;
   border-radius: 10px;
   font-size: 16px;
   background: none;
@@ -322,7 +328,7 @@ button {
 .input input:focus ~ label, .input input:valid ~ label {
   transform: translateY(-20px);
   font-size: 16px;
-  color: #0D0D0D;
+  color: #303030;
   background-color: #F2F2F2;
 }
 .input input:focus {
@@ -355,7 +361,7 @@ aside {
 }
 
 .aside__categorias {
-  color: #0D0D0D;
+  color: #303030;
   background-color: #efe5dc;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -404,7 +410,7 @@ aside {
 
 .ordenar {
   display: flex;
-  color: #0D0D0D;
+  color: #303030;
   align-items: center;
 }
 .ordenar label {
@@ -443,7 +449,7 @@ aside {
 
 .card__bottom {
   padding: 10px;
-  color: #0D0D0D;
+  color: #303030;
 }
 .card__bottom p {
   font-size: 18px;
