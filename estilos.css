@@ -9,6 +9,9 @@
 body {
   font-family: "Rubik", sans-serif !important;
   background-color: #F2F2F2;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 a {
@@ -97,13 +100,13 @@ option {
 }
 
 .nav-link:focus {
-  text-align: end;
+  text-align: center;
 }
 
 .dropdown-menu {
   background-color: #efe5dc;
   border: none;
-  text-align: end;
+  text-align: center;
 }
 
 .dropdown-item {
@@ -142,6 +145,7 @@ option {
   left: 15px;
   top: 50%;
   transform: translateY(-50%);
+  color: #303030;
 }
 
 .input-search {
@@ -286,7 +290,7 @@ button {
 .container__contacto {
   border: 2px solid #303030;
   width: 90%;
-  margin: 20px auto 10px;
+  margin: 30px auto;
   border-radius: 15px;
 }
 
